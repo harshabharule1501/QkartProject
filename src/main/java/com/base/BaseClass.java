@@ -4,6 +4,7 @@
 
 import java.awt.Desktop;
 
+
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -116,31 +117,27 @@ public class BaseClass {
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 
 	}
-	public static void extentReportStart(String location) { 
-		extentReports = new ExtentReports(); 
-		file = new File(location);
-		ExtentSparkReporter sparkReporter = new ExtentSparkReporter(file); 
-		extentReports.attachReporter(sparkReporter); 
-		extentReports.setSystemInfo("OS", System.getProperty("os.name")); 
-		extentReports.setSystemInfo("Java Version", System.getProperty("java.version")); 
-		}
-	public void extentReportTearDown(String location) throws IOException {
-		extentReports.flush();
-		file = new File(location);
-		Desktop.getDesktop().browse((file).toURI());
-		}
+//	public static void extentReportStart(String location) { 
+//		extentReports = new ExtentReports(); 
+//		file = new File(location);
+//		ExtentSparkReporter sparkReporter = new ExtentSparkReporter(file); 
+//		extentReports.attachReporter(sparkReporter); 
+//		extentReports.setSystemInfo("OS", System.getProperty("os.name")); 
+//		extentReports.setSystemInfo("Java Version", System.getProperty("java.version")); 
+//		}
+//	public void extentReportTearDown(String location) throws IOException {
+//		extentReports.flush();
+//		file = new File(location);
+//		Desktop.getDesktop().browse((file).toURI());
+//		}
 	public String takeScreenshot() throws IOException {
 		TakesScreenshot screenshot = (TakesScreenshot) driver;
 		File scrfile = screenshot.getScreenshotAs(OutputType.FILE);
-		File destfile = new File("E:\\AutomationProject\\MMT\\ScreenShots\\Amazon.png");
+		File destfile = new File(System.getProperty("user.dir")+"\\ScreenShots\\qkart.png");
 		FileUtils.copyFile(scrfile, destfile);
 		return destfile.getAbsolutePath();
 		}
-	public static String fullScreenshot(String location) throws IOException {
-		Screenshot take = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
-		ImageIO.write(take.getImage(), "PNG", new File(location));
-		return location  ;
-	}
+	
 	//4 quit
 	
 			public static void terminateBrowser() {

@@ -4,9 +4,9 @@ import java.io.IOException;
 
 public class FileReaderManager {
 	
-	private FileReaderManager() {
-		
-	}
+//	private FileReaderManager() {
+//		
+//	}
 public static FileReaderManager getInstansfilFileReaderManager() {
 	FileReaderManager frm = new FileReaderManager();
 	return frm;

@@ -1,21 +1,28 @@
 package com.runner;
 
+import org.openqa.selenium.WebDriver;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.base.BaseClass;
 
-public class ExtentReportManager implements ITestListener {
+import Utils.CommonMethods;
+
+public class ExtentReportManager extends BaseClass implements ITestListener  {
 
 	public ExtentSparkReporter sparkReporter; //UI of the report 
 	public ExtentReports extent;// populate common information
 	public ExtentTest test; //creates test case entry in the reports  and update status of test methods 
 	
+//	WebDriver driver;
 	public void onStart(ITestContext context) {
 		sparkReporter=new ExtentSparkReporter(System.getProperty("user.dir")+"/reports/myreport.html");//location of the report
 		sparkReporter.config().setReportName("functional testing");
@@ -39,6 +46,10 @@ public class ExtentReportManager implements ITestListener {
 		test.log(Status.FAIL, "test case failed is "+result.getName());
 		test.log(Status.FAIL, "test case failed cause is "+result.getThrowable());
 
+		String temp=CommonMethods.getScreenshot(driver);
+		test.fail(result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
+		
+
 	}
 	public void onTestSkipped(ITestResult result) {
 		test=extent.createTest(result.getName());
@@ -49,4 +60,6 @@ public class ExtentReportManager implements ITestListener {
 		extent.flush();
 		//whatever things we have created so far it will update that in reports
 	}
+	
+	
 }

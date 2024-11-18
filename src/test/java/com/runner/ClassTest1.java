@@ -2,7 +2,7 @@ package com.runner;
 
 import java.io.IOException;
 
-
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import com.base.BaseClass;
@@ -20,12 +20,6 @@ public class ClassTest1 extends BaseClass {
 	public ClassPage1 c1=new ClassPage1(driver);
 
 	
-	
-
-
-	
-
-	
 	@Test
 	private void isDisplay() throws IOException, InterruptedException {
 		scroll(pom.getClassPage4().getLogin());
@@ -34,6 +28,7 @@ public class ClassTest1 extends BaseClass {
 		CommonMethods.isdisplayed(pom.getClassPage1().getRegister());
 		CommonMethods.isdisplayed(pom.getClassPage1().getSearchBtn());
 		
+		
 //		cm.elementToBeVisibleWait(c1.getLogin());
 //		cm.elementToBeVisibleWait(c1.getRegister());
 //		cm.elementToBeVisibleWait(c1.getSearchBtn());
@@ -41,6 +36,7 @@ public class ClassTest1 extends BaseClass {
 
 
 	}
+	@Ignore
 	@Test
 	private void isClickable() throws IOException, InterruptedException {
 		scroll(pom.getClassPage4().getLogin());

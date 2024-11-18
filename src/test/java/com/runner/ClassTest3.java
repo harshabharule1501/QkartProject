@@ -33,7 +33,7 @@ public class ClassTest3 extends BaseClass {
 	@Test
 	private void verify() throws IOException, InterruptedException {
 		scroll(pom.getClassPage4().getLogin());
-		cm.elementToBeVisibleWait(pom.getClassPage4().getLogin());
+		//cm.elementToBeVisibleWait(pom.getClassPage4().getLogin());
 		CommonMethods.assertMethod("Search for items/categories", pom.getClassPage3().getSearchTextBox().getText());
 		
 

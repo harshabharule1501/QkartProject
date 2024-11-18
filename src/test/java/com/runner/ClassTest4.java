@@ -44,6 +44,7 @@ public class ClassTest4 extends BaseClass {
 		
 		scroll(pom.getClassPage4().getLogin());
 		cm.elementToBeVisibleWait(pom.getClassPage4().getLogin());
+		CommonMethods.clickButton(pom.getClassPage4().getLogin());
 		WebElement username =pom.getClassPage4().getUsernm();	//getting locator by calling method inside loginpage using pom object
 		WebElement password=pom.getClassPage4().getPwd();
 		cm.elementToBeVisibleWait(pom.getClassPage4().getUsernm());
@@ -51,12 +52,12 @@ public class ClassTest4 extends BaseClass {
 		username.click();
 
 		username.sendKeys(reader.getCellData("LoginTestData", "username", 2));
-		Thread.sleep(3000);
+		
 		cm.elementToBeVisibleWait(pom.getClassPage4().getPwd());
 
 		password.click();
 		password.sendKeys(reader.getCellData("LoginTestData", "password", 2));//using getcelldata function in Xls_Reader class and passing sheetname,field name and rowno 
-		Thread.sleep(3000);
+		
 
 
 	}

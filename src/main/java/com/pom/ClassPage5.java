@@ -6,12 +6,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class ClassPage5 {
-	public WebDriver driver;
+	
 
-	public ClassPage5(WebDriver driver2) {
-	this.driver=driver2;
+
+	public WebDriver driver;
+	public ClassPage5(WebDriver driver) {
+		this.driver=driver;
 	PageFactory.initElements(driver,this);
 	}
+	
 	@FindBy(xpath = "//button[text()='Register']")
 	private WebElement Register;
 	@FindBy(xpath = "//button[text()='Login']")
@@ -142,9 +145,9 @@ public class ClassPage5 {
 
 
 
-	public WebDriver getDriver() {
-		return driver;
-	}
+//	public WebDriver getDriver() {
+//		return driver;
+//	}
 
 	public WebElement getRegister() {
 		return Register;

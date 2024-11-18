@@ -20,29 +20,30 @@ public class ClassTest2 extends BaseClass {
 
 	public static PageObject pom = new PageObject();
 	CommonMethods cm =new CommonMethods();
-	
-	
+
+
 
 
 	@Test
 	private void getCountOfLinks() throws IOException, InterruptedException {
-		driver.get("https://crio-qkart-frontend-qa.vercel.app/");
-		Thread.sleep(5000);
-		
-	List<WebElement> linkCount=pom.getClassPage2().getLinks();
-	System.out.println(linkCount.size());
+		//driver.get("https://crio-qkart-frontend-qa.vercel.app/");
+		launchBrowser();
+		cm.elementToBeVisibleWait(pom.getClassPage4().getLogin());
+
+
+		List<WebElement> linkCount=pom.getClassPage2().getLinks();
+		System.out.println(linkCount.size());
 
 	}
-	
+
 	@Test
 	private void getCountOfImages() throws IOException, InterruptedException {
-		driver.get("https://crio-qkart-frontend-qa.vercel.app/");
+		launchBrowser();
 
-		Thread.sleep(5000);
+		cm.elementToBeVisibleWait(pom.getClassPage4().getLogin());
 
-
-	List<WebElement> images=pom.getClassPage2().getImages();
-	System.out.println(images.size());
+		List<WebElement> images=pom.getClassPage2().getImages();
+		System.out.println(images.size());
 	}
 
 }

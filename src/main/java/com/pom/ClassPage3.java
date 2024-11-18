@@ -9,11 +9,11 @@ import com.base.BaseClass;
 
 public class ClassPage3 extends BaseClass {
 
+
+
 	public WebDriver driver;
-
-
-	public ClassPage3(WebDriver driver2) {
-	this.driver=driver2;
+	public ClassPage3(WebDriver driver) {
+		this.driver=driver;
 	PageFactory.initElements(driver,this);
 	}
 

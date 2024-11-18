@@ -7,10 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ClassPage4 {
 
-	public WebDriver driver;
+	
 
-	public ClassPage4(WebDriver driver2) {
-	this.driver=driver2;
+	public WebDriver driver;
+	public ClassPage4(WebDriver driver) {
+		this.driver=driver;
 	PageFactory.initElements(driver,this);
 	}
 	
@@ -32,9 +33,9 @@ public class ClassPage4 {
 	}
 
 
-	public WebDriver getDriver() {
-		return driver;
-	}
+//	public WebDriver getDriver() {
+//		return driver;
+//	}
 
 	@FindBy(xpath = "//input[@name='username']")
 	private WebElement usernm;

@@ -6,16 +6,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ClassPage1 {
+import com.base.BaseClass;
+
+public class ClassPage1 extends BaseClass {
 
 	public WebDriver driver;
-
-
-	public ClassPage1(WebDriver driver2) {
-	this.driver=driver2;
+	public ClassPage1(WebDriver driver) {
+		this.driver=driver;
 	PageFactory.initElements(driver,this);
 	}
-
+	
 	@FindBy(xpath = "//button[text()='Login']")
 	private WebElement Login;
 	
