@@ -70,6 +70,8 @@ public class ClassTest5 extends BaseClass{
 
 		CommonMethods.clickButton(pom.getClassPage5().getAddToCartBtn());
 	
+		String assertPopupMsg=pom.getClassPage5().getPopupAfterAddToCart().getText().toString();
+		System.out.println(assertPopupMsg);
 //		CommonMethods.assertMethod(pom.getClassPage5().getPopupAfterAddToCart().getText().toString(), "Item already in cart. Use the cart sidebar to update quantity or remove item.");
 	
 		scroll(pom.getClassPage5().getSearchForItem());

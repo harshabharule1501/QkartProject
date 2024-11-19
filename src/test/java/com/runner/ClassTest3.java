@@ -34,7 +34,9 @@ public class ClassTest3 extends BaseClass {
 	private void verify() throws IOException, InterruptedException {
 		scroll(pom.getClassPage4().getLogin());
 		//cm.elementToBeVisibleWait(pom.getClassPage4().getLogin());
-		CommonMethods.assertMethod("Search for items/categories", pom.getClassPage3().getSearchTextBox().getText());
+		String searchTextBox=pom.getClassPage3().getSearchTextBox().getAttribute("placeholder");
+		System.out.println(searchTextBox);
+		CommonMethods.assertMethod("Search for items/categories",searchTextBox );
 		
 
 
