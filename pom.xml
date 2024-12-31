@@ -182,24 +182,10 @@
 					<artifactId>maven-project-info-reports-plugin</artifactId>
 					<version>3.0.0</version>
 				</plugin>
-				 <plugin>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-					<version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                        <configuration>
-                            <!-- Reference to Checkstyle config -->
-                            <configLocation>https://raw.githubusercontent.com/checkstyle/checkstyle/master/src/main/resources/google_checks.xml</configLocation>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+			
         </plugins>
 				
-			</plugins>
+			
 		</pluginManagement>
 	</build>
 </project>
