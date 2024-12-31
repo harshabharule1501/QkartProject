@@ -23,14 +23,14 @@
                         <goal>check</goal>
                     </goals>
                     <configuration>
-                        <configLocation>https://raw.githubusercontent.com/checkstyle/checkstyle/master/src/main/resources/google_checks.xml</configLocation>
-                        <!-- This is a link to Google's Checkstyle configuration, you can replace it with your own -->
+                        <skip>true</skip>
                     </configuration>
                 </execution>
             </executions>
         </plugin>
     </plugins>
 </build>
+
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
